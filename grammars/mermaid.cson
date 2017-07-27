@@ -97,4 +97,23 @@
       'name': 'punctuation.definition.comment.mermaid'
     }
 
+    # sequence diagram Tag
+    {
+      'match': '^(sequenceDiagram)\\b'
+      'captures':
+        '1':
+            'name': 'keyword.control.mermaid'
+      'name': 'meta.function.mermaid'
+    }
+
+    # participant/opt/loop Tag
+    {
+      'match': '^\\s*(participant|opt|loop)\\s+([A-Za-z\\ 0-9]+)'
+      'captures':
+        '1':
+            'name': 'keyword.control.mermaid'
+        '2':
+            'name': 'entity.name.function.mermaid'
+      'name': 'meta.function.mermaid'
+    }
 ]
