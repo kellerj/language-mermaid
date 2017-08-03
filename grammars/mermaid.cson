@@ -106,6 +106,21 @@
       'name': 'meta.function.mermaid'
     }
 
+    # note Tags
+    {
+      'match': '^\\s*(note)\\s+(over|right of|left of)\\s+([A-Za-z0-9,]+)(:)\\s+([A-Za-z\\ 0-9,]+)'
+      'captures':
+        '1':
+            'name': 'keyword.control.mermaid'
+        '2':
+            'name': 'punctuation.definition.string.mermaid'
+        '3':
+            'name': 'entity.name.function.mermaid'
+        '4':
+            'name': 'punctuation.definition.string.mermaid'
+      'name': 'meta.function.mermaid'
+    }
+
     # participant/opt/loop Tag
     {
       'match': '^\\s*(participant|opt|loop)\\s+([A-Za-z\\ 0-9]+)'
