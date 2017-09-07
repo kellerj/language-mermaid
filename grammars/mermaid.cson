@@ -62,7 +62,7 @@
 
     # Arrows without text
     {
-      'match': '\\b([A-Z0-9a-z\\_]+)\\s+?([\\-\\.\\>\\<]{2,5})\\s+?([A-Z0-9a-z\\_]+)'
+      'match': '\\b([A-Z0-9a-z\\_\\ ]+)\\s([.><+-]+)\\s([A-Z0-9a-z\\_\\ ]+)(:?)'
       'captures':
         '1':
             'name': 'punctuation.definition.string.mermaid'
@@ -70,12 +70,14 @@
             'name': 'keyword.other.special-method.mermaid'
         '3':
             'name': 'punctuation.definition.string.mermaid'
-    'name': 'meta.variable.mermaid'
+        '4':
+            'name': 'keyword.other.special-method.mermaid'
+      'name': 'meta.variable.mermaid'
     }
 
     # Arrows with text
     {
-      'match': '\\b([A-Z0-9a-z\\_]+)\\s?+([\\-\\.\\>\\<]{2,4})\\s?+([\\|])([A-Za-z\\ 0-9\\_]+)([\\|])\\s?+([a-zA-Z0-9\\ \\_]+)'
+      'match': '\\b([A-Z0-9a-z\\_\\ ]+)\\s?+([\\-\\.\\>\\<]{2,4})\\s?+([\\|])([A-Za-z\\ 0-9\\_]+)([\\|])\\s?+([a-zA-Z0-9\\ \\_]+)'
       'captures':
         '1':
             'name': 'punctuation.definition.string.mermaid'
@@ -108,12 +110,12 @@
 
     # note Tags
     {
-      'match': '^\\s*(note)\\s+(over|right of|left of)\\s+([A-Za-z0-9,]+)(:)\\s+([A-Za-z\\ 0-9,]+)'
+      'match': '^\\s*(note)\\s+(over|right of|left of)\\s+([A-Za-z0-9,\\ _]+)(:)\\s+([A-Za-z\\ 0-9,_]+)'
       'captures':
         '1':
             'name': 'keyword.control.mermaid'
         '2':
-            'name': 'punctuation.definition.string.mermaid'
+            'name': 'keyword.control.mermaid'
         '3':
             'name': 'entity.name.function.mermaid'
         '4':
@@ -123,7 +125,7 @@
 
     # participant/opt/loop Tag
     {
-      'match': '^\\s*(participant|opt|loop)\\s+([A-Za-z\\ 0-9]+)'
+      'match': '^\\s*(participant|opt|loop)\\s+([A-Za-z\\ _0-9]+)'
       'captures':
         '1':
             'name': 'keyword.control.mermaid'
